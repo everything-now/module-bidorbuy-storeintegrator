@@ -1,0 +1,348 @@
+<?php
+$warnings = $block->getWarnings();
+foreach ($warnings as $warning) {
+    echo "<div class='message message-warning warning'><div data-ui-id='messages-message-warning'>$warning</div></div>";
+}
+?>
+<style>
+    
+.beta-tester {
+    width: 100%;
+    height: auto;
+    margin-bottom: 34px;
+    position: relative;
+    box-sizing: border-box;
+    background: url(homescreenpicture.png) no-repeat 0 0;
+}
+
+
+.beta-tester__banner {
+    width: 100%;
+    height: auto;
+    margin-bottom: 24px;
+    background-color: #555;
+    background-size: cover;
+    padding: 30px 0px;
+}
+
+.beta-tester::before {
+    content: '';
+    width: 6px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #7FFF00;
+}
+
+#poststuff h2.beta-tester__heading {
+    display: block;
+    width: 70%;
+    margin: 0 auto;
+    color: #fff;
+    font-family: sans-serif;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+
+h2 {
+    font-size: 1.5rem;
+}
+
+h2 span {
+    font-size: 2rem;
+    color: #50C878;
+}
+
+#poststuff h2.beta-tester__heading--dark {
+    color: #000;
+    width: 90%;
+    margin: 0 auto;
+    font-family: sans-serif;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.beta-tester__form {
+    font-family: sans-serif;
+}
+
+.beta-tester__form--hidden {
+    margin: 0;
+    padding: 0;
+}
+
+.beta-tester__form-wrapper {
+    position: fixed;
+    z-index: 999999999;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 40px 60px;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 8px;
+    justify-content: space-between;
+}
+
+.beta-tester__form-wrap {
+width: 100%;
+display: flex;
+justify-content: space-between;
+margin-bottom: 24px;
+}
+
+.beta-tester__form-inner-wrapper {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+}
+
+.beta-tester__input-wrapper:not(:last-of-type) {
+    margin-right: 14px;
+}
+
+.beta-tester__label {
+    display: block;
+    margin-bottom: 6px;
+    color: #000;
+}
+
+.beta-tester__input {
+    display: block;
+    min-width: 240px;
+    border-radius: 4px;
+    line-height: 1.8;
+    padding: 4px 12px;
+    border: 1px solid rgb(90, 90, 90);
+    margin-right: 14px;
+    margin-bottom: 24px;
+}
+
+.beta-tester__submit {
+    box-sizing: border-box;
+    display: block;
+    margin: 0 auto;
+    width: 200px;
+    height: 40px;
+    padding: 6px 14px;
+    font-family: sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    border: none;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: #50C878;
+}
+
+.beta-tester__buttons-wrapper {
+    padding: 16px 0px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.beta-tester__link {
+    padding: 6px 14px;
+    font-family: sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 20px;
+    min-width: 124px;
+    text-align: center;
+}
+
+.beta-tester__link:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+.beta-tester__link:hover {
+    color: #fff;
+}
+
+.beta-tester__info {
+    color: #48BBD5;
+}
+
+.beta-tester__info:hover {
+    color: #2792aa;
+}
+
+.beta-tester__contact {
+    color: #48BBD5;
+}
+
+.beta-tester__contact:hover {
+    color: #2792aa;
+}
+
+.beta-tester__dismiss {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #48BBD5;
+}
+
+.beta-tester__dismiss:hover {
+    color: #2792aa;
+}
+
+.beta-tester__cancel {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #2792aa;;
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+
+.beta-tester__links-wrapper {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+@media (max-width: 984px) {
+    .beta-tester__input-wrapper {
+        margin-right: 14px;
+    }
+}
+</style>
+
+<div>
+<br>
+<h1>bidorbuy Store Integrator</h1>
+
+<div id="bobsi-icon-trade-feed"></div>
+<div id="bobsi-adv">
+    </div>
+    <div class="beta-tester" id="banner" hidden="true">
+            <div class="beta-tester__banner">
+                <h2 class="beta-tester__heading" 
+                style="display: block; margin: 0 auto 34px; color: #fff; width: 80%; 
+                text-align: center; line-height: 2;"
+                >Become MySI Beta tester and get <span>3-month free access</span> to multiple 
+                market places <br>(Bidorbuy, Google, Takealot, etc),<br> easy category mapping, regular 
+                automatic pricing/inventory updates</h2>
+                <div id="banner-inner" class="beta-tester__submit">Submit or Reject</div>
+            </div>
+            <div id="beta-tester__form-wrapper" class="beta-tester__form-wrapper" hidden="true">
+            </div>
+        </div>
+
+    <!-- BEGIN ADVERTPRO CODE BLOCK -->
+    <script type="text/javascript">
+        document.write('<scr' + 'ipt src="http://nope.bidorbuy.co.za/servlet/view/banner/javascript/zone?zid=153&pid=0&random=' + Math.floor(89999999 * Math.random() + 10000000) + '&millis=' + new Date().getTime() + '&referrer=' + encodeURIComponent(document.location) + '" type="text/javascript"></scr' + 'ipt>');
+        
+    function getCookie(name) {
+                let matches = document.cookie.match(new RegExp(
+                "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+                ));
+                    return matches ? decodeURIComponent(matches[1]) : undefined;
+            };
+            const dismissCookie = getCookie('beta_testing_answered_v');
+                const banner = document.querySelector('#banner');
+                const formWrapper = document.querySelector('#beta-tester__form-wrapper');
+                const bannerInner = document.querySelector('#banner-inner');
+
+                const markup = `<div class="beta-tester__form">                    <div class="beta-tester__form-wrap">
+                        <div class="beta-tester__form-inner-wrapper">
+                            <div class="beta-tester__input-wrapper">
+                                <label class="beta-tester__label" for="testerName">
+                                    Name
+                                </label>
+                                <input required type="text" class="beta-tester__input" name="testerName" 
+                                id="testerName" placeholder="Enter your name">
+                            </div>
+                            <div class="beta-tester__input-wrapper">
+                                <label class="beta-tester__label" for="testerEmail">
+                                    Email
+                                </label>
+                                <input required type="email" class="beta-tester__input" name="testerEmail" 
+                                id="testerEmail" placeholder="Enter your email">
+                            </div>
+                            <!-- <div class="beta-tester__form-inner-wrapper"> -->
+                                <div class="beta-tester__input-wrapper">
+                                    <label class="beta-tester__label" for="testerPhone">
+                                        Phone
+                                    </label>
+                                    <input required type="text" class="beta-tester__input" name="testerPhone" 
+                                    id="testerPhone" placeholder="Enter your phone">
+                                </div>
+                                <input type="hidden" class="beta-tester__input" name="testerProducts" 
+                                id="testerProducts" placeholder="Enter number of products">
+                                <input type="hidden" name="platform" value="magento">
+                                <!-- </div> -->
+                        </div>
+                    </div>
+                    <button class="beta-tester__link beta-tester__submit" 
+                    onclick="document.cookie='beta_testing_answered_v=true; max-age=5184000'">Send</button>
+                    </div>`
+                    
+                    const markupButtons = `<a href="https://www.mysi.app/" target="_blank" 
+                            class="beta-tester__link beta-tester__info">Learn more</a>
+                            <!-- <a href="https://www.mysi.app/contact-us/" target="_blank" 
+                            class="beta-tester__link beta-tester__contact">Contact us</a> -->
+                        <form id="beta-tester-form--hidden" name="beta-tester-form--hidden" method="POST" 
+                        action="https://formspree.io/f/mlearavn" class="beta-tester__form--hidden">
+                            <input type="hidden" name="adminEmail" value="<?php $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+    $scopeConfig = $objectManager->create('\Magento\Framework\App\Config\ScopeConfigInterface');
+    $email = $scopeConfig->getValue('trans_email/ident_support/email',\Magento\Store\Model\ScopeInterface::SCOPE_STORE); echo $email ?>">
+                            <input type="hidden" name="platform" value="magento">
+                            <input type="hidden" name="action" value="I am not interested">
+                            <button class="beta-tester__link beta-tester__dismiss" 
+                            onclick="document.cookie='beta_testing_answered_v=true; max-age=1209600'"
+                            >I’m not interested</button>
+                        </form>`
+                
+                const openForm = () => {
+                    formWrapper.removeAttribute('hidden');
+                    formWrapper.style.display = 'flex';
+                
+                const form = document.createElement('FORM');
+                form.setAttribute('name', "beta-tester-form-main");
+                form.id ="beta-tester-form-main";
+                form.setAttribute('method',"POST");
+                form.setAttribute('action', "https://formspree.io/f/mlearavn");
+                form.insertAdjacentHTML('afterbegin', markup);
+                formWrapper.appendChild(form);
+                
+                const buttons = document.createElement('DIV');
+                buttons.classList.add("beta-tester__buttons-wrapper");
+                buttons.id = "buttons-wrapper";
+                buttons.insertAdjacentHTML('afterbegin', markupButtons);
+                formWrapper.appendChild(buttons);
+                };
+
+                bannerInner.addEventListener('click', openForm)
+
+                if (dismissCookie) {
+                    banner.setAttribute('hidden', true);
+                } else {
+                    banner.removeAttribute('hidden');
+                }
+                
+    </script>
+    <!-- END ADVERTPRO CODE BLOCK -->
+</div>

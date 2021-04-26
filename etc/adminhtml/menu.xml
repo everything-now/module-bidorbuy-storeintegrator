@@ -1,0 +1,21 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add
+                id="Bidorbuy_StoreIntegrator::bidorbuy_system"
+                title="BIDORBUY"
+                module="Bidorbuy_StoreIntegrator"
+                sortOrder="60"
+                parent="Magento_Backend::system"
+                resource="Bidorbuy_StoreIntegrator::bidorbuy_system"
+        />
+        <add
+                id="Bidorbuy_StoreIntegrator::settings"
+                title="bidorbuy Store Integrator"
+                module="Bidorbuy_StoreIntegrator"
+                sortOrder="10"
+                parent="Bidorbuy_StoreIntegrator::bidorbuy_system"
+                action="adminhtml/system_config/edit/section/bobsi_settings"
+                resource="Bidorbuy_StoreIntegrator::settings"/>
+    </menu>
+</config>

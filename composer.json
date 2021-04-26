@@ -1,0 +1,30 @@
+{
+  "name": "extremeidea/module-bidorbuy-storeintegrator",
+  "description": "bidorbuy Store Integrator",
+  "type": "magento2-module",
+  "version": "1.5.2",
+  "homepage": "https://www.extreme-idea.com",
+  "keywords": [
+    "bidorbuy",
+    "store",
+    "integrator"
+  ],
+  "time": "2021-04-23 10:48:26",
+  "license": [
+    "OSL-3.0",
+    "AFL-3.0"
+  ],
+  "require": {
+    "monolog/monolog": "^1.16.0",
+    "extremeidea/bidorbuy-storeintegrator-core": "3.1.7",
+    "extremeidea/php-multirequest": "2.0.8"
+  },
+  "autoload": {
+    "psr-4": {
+      "Bidorbuy\\StoreIntegrator\\": ""
+    },
+    "files": [
+      "registration.php"
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="admin_system_config_changed_section_bobsi_settings">
+        <observer name="bobsi_admin_system_config_changed_section_bobsi_settings" instance="Bidorbuy\StoreIntegrator\Observer\ModuleConfigObserver"/>
+    </event>
+    <event name="adminhtml_catalog_product_attribute_edit_frontend_prepare_form">
+        <observer name="bobsi_adminhtml_catalog_product_attribute_edit_frontend_prepare_form" instance="Bidorbuy\StoreIntegrator\Observer\AttributeRenderObserver"/>
+    </event>
+    <event name="adminhtml_block_html_before">
+        <observer name="bobsi_adminhtml_block_html_before" instance="Bidorbuy\StoreIntegrator\Observer\AttributeAddToGridObserver"/>
+    </event>
+    <event name="core_collection_abstract_load_after">
+        <observer name="bobsi_core_collection_abstract_load_after" instance="Bidorbuy\StoreIntegrator\Observer\AttributeLoadDataObserver"/>
+    </event>
+    <event name="catalog_category_prepare_save">
+        <observer name="bobsi_catalog_category_prepare_save" instance="Bidorbuy\StoreIntegrator\Observer\CategoryPreSaveObserver"/>
+    </event>
+</config>

@@ -1,0 +1,96 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="bidorbuy" translate="label" sortOrder="200">
+            <label>BIDORBUY</label>
+        </tab>
+        <section id="bobsi_settings" translate="label" type="text" sortOrder="110" showInDefault="1" showInWebsite="0" showInStore="0">
+            <label>bidorbuy Store Integrator</label>
+            <tab>bidorbuy</tab>
+            <resource>Bidorbuy_StoreIntegrator::settings</resource>
+            <group id="topFieldset" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <frontend_model>Bidorbuy\StoreIntegrator\Block\Adminhtml\System\Config\TopFieldset</frontend_model>
+            </group>
+            <group id="exportConfiguration" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Export Configuration</label>
+                <field id="filename" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Filename</label>
+                    <validate>required-entry validate-filename validate-length maximum-length-16</validate>
+                </field>
+                <field id="compressLibrary" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Compress Tradefeed XML</label>
+                    <source_model>Bidorbuy\StoreIntegrator\Model\Config\Source\CompressLibrary</source_model>
+                </field>
+                <field id="defaultStockQuantity" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Min quantity in stock</label>
+                    <validate>required-entry validate-digits validate-zero-or-greater</validate>
+                </field>
+                <field id="currency" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Export in Currency</label>
+                    <source_model>Magento\Config\Model\Config\Source\Locale\Currency</source_model>
+                    <validate>validate-select</validate>
+                </field>
+                <field id="encodedConfiguration" translate="label" type="hidden" sortOrder="60" showInDefault="0" showInWebsite="0" showInStore="0">
+                </field>
+            </group>
+            <group id="exportCriteria" translate="label" type="text" sortOrder="70" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Export Criteria</label>
+                <field id="exportQuantityMoreThan" translate="label" type="text" sortOrder="80" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Export products with available quantity more than</label>
+                    <validate>required-entry validate-digits validate-zero-or-greater</validate>
+                </field>
+                <field id="excludeCategories" translate="label" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Included Categories</label>
+                <frontend_model>Bidorbuy\StoreIntegrator\Block\Adminhtml\System\Config\ExcludeCategories</frontend_model>
+                <validate>validate-select</validate>
+                </field>
+            </group>
+            <group id="productSettings" translate="label" type="text" sortOrder="91" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Product Settings</label>
+                <field id="includeAllowOffersCategories" translate="label" sortOrder="92" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Included Allow Offers Categories</label>
+                    <frontend_model>Bidorbuy\StoreIntegrator\Block\Adminhtml\System\Config\IncludeAllowOffersCategories</frontend_model>
+                    <validate>validate-select</validate>
+                </field>
+                <field id="productConditionCategories" translate="label" sortOrder="93" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <frontend_model>Bidorbuy\StoreIntegrator\Block\Adminhtml\System\Config\ProductConditionCategories</frontend_model>
+                    <validate>validate-select</validate>
+                </field>
+            </group>
+            <group id="links" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="0" showInStore="0">
+                <frontend_model>Bidorbuy\StoreIntegrator\Block\Adminhtml\System\Config\Links</frontend_model>
+                <label>Links</label>
+                <field id="tokenExportUrl" translate="label" type="text" sortOrder="110" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Export</label>
+                    <frontend_model>Bidorbuy\StoreIntegrator\Block\Adminhtml\System\Config\TokenExportUrl</frontend_model>
+                </field>
+                <field id="tokenDownloadUrl" translate="label" type="text" sortOrder="120" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Download</label>
+                    <frontend_model>Bidorbuy\StoreIntegrator\Block\Adminhtml\System\Config\TokenDownloadUrl</frontend_model>
+                </field>
+            </group>
+            <group id="debug" translate="label" type="text" sortOrder="140" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Debug</label>
+                <field id="basicAccessAuthentication" translate="label" type="text" sortOrder="130" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <frontend_model>Bidorbuy\StoreIntegrator\Block\Adminhtml\System\Config\BasicAccessAuthentication</frontend_model>
+                </field>
+                <field id="loggingApplication" translate="label" type="select" sortOrder="150" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Logging only the certain types of errors</label>
+                    <source_model>Bidorbuy\StoreIntegrator\Model\Config\Source\LoggingApplication</source_model>
+                    <validate>validate-select</validate>
+                </field>
+                <field id="loggingLevel" translate="label" type="select" sortOrder="160" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Logging Level</label>
+                    <source_model>Bidorbuy\StoreIntegrator\Model\Config\Source\LoggingLevel</source_model>
+                    <validate>validate-select</validate>
+                </field>
+                <frontend_model>Bidorbuy\StoreIntegrator\Block\Adminhtml\System\Config\Debug</frontend_model>
+            </group>
+            <group id="version" translate="label" type="text" sortOrder="170" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Version</label>
+                <field id="version" translate="label" type="text" sortOrder="180" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <frontend_model>Bidorbuy\StoreIntegrator\Block\Adminhtml\System\Config\Version</frontend_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
